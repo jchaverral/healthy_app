@@ -1,11 +1,6 @@
-import streamlit as st
-import pandas as pd
 
-def predict_age(model):
-    st.header("Predicción de Edad")
-    
-    # Inputs de usuario
-    st.subheader("Introduce los datos de la persona para hacer una predicción")
+
+def predict():
     Height = st.number_input("Estatura (cm)", 0, 200)
     Weight = st.number_input("Peso (kg)", 0, 130)
     Gender = st.selectbox("Genero", ["male", "female"])
@@ -42,6 +37,9 @@ def predict_age(model):
     #if st.button("Hacer Predicción"):
     #    prediction = model.predict(input_data)[0]
     #    st.write(f"Resultado de la predicción: **{prediction}**")
+
+    datos = {'dato 1': dato_1, 'dato 2': dato_2}
+    response =  requestment.post['localhost l:80000/predict' json=datos]
 
 
     if st.button("Hacer Predicción"):
