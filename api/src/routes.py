@@ -1,9 +1,11 @@
-from dashboard.modules.predict import predict 
-from models import ImputModel, OutputModel
+from fastapi import APIRouter
+from models import InputData, OutputData
+from predict import predict
 
-router = APIRouter ()
 
-@router.endpoint('/predict', input model - ImputModel, output model - OutputModel)
-def predict(input_model):
-    result = predict(input_model.data)
-    return OutputModel(result-result),200
+api_router = APIRouter()
+
+@api_router.post('/predict/', response_model= OutputData)
+def predict(input_model:InputData):
+    result = predict(input_model.model_dump())
+    return {"Prediccion edad": result},200
