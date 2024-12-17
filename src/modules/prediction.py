@@ -50,3 +50,5 @@ def predict_age(model):
             st.write(f"Resultado de la predicción: **{prediction} años**")
         except Exception as e:
             st.error(f"Error al realizar la predicción: {e}")
+
+   # request.post hacer el post con un diccionario          

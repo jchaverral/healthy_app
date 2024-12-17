@@ -1,9 +1,7 @@
 from fastapi import FastAPI
-from pydantic import BaseModel
-from predict import load_model
 from routes import api_router
 
-model = load_model()
+
 
 app = FastAPI(
     title="Modelo de Predicción de Edad",
