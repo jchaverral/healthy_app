@@ -1,0 +1,23 @@
+
+services:
+  api:
+    build: 
+      context: ./api
+    image: imagen_servicio1:1.0
+    container_name: contenedor_servicio1
+    ports:
+      - "8000:8000"
+    environment:
+      - HOST=0.0.0.0  # Asegura que FastAPI escuche todas las interfaces
+      - PORT=8000     # Configura el puerto de FastAPI (opcional si ya es el predeterminado)
+
+  dashboard:
+    build:
+      context: ./dashboard
+    image: imagen_servicio2:1.0
+    container_name: contenedor_servicio2
+    ports:
+      - "8501:8501"
+    environment:
+      - STREAMLIT_SERVER_PORT=8501  # Configura el puerto de Streamlit
+    

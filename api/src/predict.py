@@ -7,7 +7,7 @@ from models import InputData
 
 
 
-DEFAULT_MODEL_PATH = Path(__file__).parent.parent.parent/'src/models/gaussian_model.joblib'
+DEFAULT_MODEL_PATH = Path(__file__).parent/'ml_models/gaussian_model.joblib'
 def load_model():
     model_path = os.getenv("HEALTH_MODEL_PATH", DEFAULT_MODEL_PATH)
     return joblib.load(model_path)
